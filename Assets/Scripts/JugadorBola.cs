@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JugadorBola : MonoBehaviour
 {
@@ -11,9 +12,17 @@ public class JugadorBola : MonoBehaviour
     private float ValX;
     private float ValZ;
     public float velocidad=2;
+    public GameObject premioPrefab;
+    private int puntos = 0;
+    public AudioClip sonidoMoneda;
+    private AudioSource audioSource;
+    public Text textoPuntos;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
+        audioSource.clip = sonidoMoneda; 
         CrearSueloInicial();
         DireccionActual = Vector3.forward;
         offSet = camara.transform.position;
@@ -62,6 +71,10 @@ public class JugadorBola : MonoBehaviour
         }
 
         Instantiate(Suelo, new Vector3(ValX, 0, ValZ), Quaternion.identity);
+        if (Random.value > 0.5f) 
+        {
+            Instantiate(premioPrefab, new Vector3(ValX, 1, ValZ), Quaternion.identity);
+        }
         yield return new WaitForSeconds(2);
         Suelo.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         Suelo.gameObject.GetComponent<Rigidbody>().useGravity=true;
@@ -79,5 +92,16 @@ public class JugadorBola : MonoBehaviour
             Instantiate(Suelo, new Vector3(ValX, 0, ValZ), Quaternion.identity);
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Moneda"))
+        {
+            puntos++;
+            textoPuntos.text = "Puntos: " + puntos.ToString();
+            audioSource.PlayOneShot(sonidoMoneda);
+            Destroy(other.gameObject);
+        }
     }
 }
