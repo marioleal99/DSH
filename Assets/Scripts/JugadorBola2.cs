@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class JugadorBola : MonoBehaviour
+public class JugadorBola2 : MonoBehaviour
 {
     public Camera camara;
     public GameObject Suelo;
@@ -12,7 +12,7 @@ public class JugadorBola : MonoBehaviour
     private Vector3 DireccionActual;
     private float ValX;
     private float ValZ;
-    public float velocidad=2;
+    public float velocidad;
     public GameObject premioPrefab;
     private int puntos = 0;
     public AudioClip sonidoMoneda;
@@ -105,7 +105,7 @@ public class JugadorBola : MonoBehaviour
             Destroy(other.gameObject);
             if (puntos >= 10)
             {
-                SceneManager.LoadScene("Nivel2");
+                SceneManager.LoadScene("Win");
             }
         }
     }
