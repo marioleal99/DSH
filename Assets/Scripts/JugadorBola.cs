@@ -100,7 +100,7 @@ public class JugadorBola : MonoBehaviour
         if (other.gameObject.CompareTag("Moneda"))
         {
             puntos++;
-            textoPuntos.text = "Puntos: " + puntos.ToString();
+            textoPuntos.text = "Puntos: " + puntos.ToString() + "/10";
             audioSource.PlayOneShot(sonidoMoneda);
             Destroy(other.gameObject);
             if (puntos >= 10)
