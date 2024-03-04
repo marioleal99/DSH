@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611f7a7713ab5c54580f7b4beed14d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: caa006c8cee021a41871700c979ab9b4, type: 3}
+  musicClip: {fileID: 8300000, guid: c1442747ccdd76849ae39feb441305bf, type: 3}
 --- !u!82 &93929072
 AudioSource:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: caa006c8cee021a41871700c979ab9b4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c1442747ccdd76849ae39feb441305bf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -895,6 +895,7 @@ GameObject:
   - component: {fileID: 2069900119}
   - component: {fileID: 2069900118}
   - component: {fileID: 2069900117}
+  - component: {fileID: 2069900120}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -976,6 +977,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &2069900120
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069900116}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: b4f152e0498484391a9f0d5a1facf03b, type: 2}
 --- !u!1001 &8823314385085913954
 PrefabInstance:
   m_ObjectHideFlags: 0

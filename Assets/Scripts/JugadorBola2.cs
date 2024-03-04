@@ -99,7 +99,9 @@ public class JugadorBola2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Moneda"))
         {
-            puntos++;
+            other.gameObject.SetActive(false);
+            velocidad = velocidad + 0.5f;
+            puntos = puntos + 1;
             textoPuntos.text = "Puntos: " + puntos.ToString() + "/20";
             audioSource.PlayOneShot(sonidoMoneda);
             Destroy(other.gameObject);
