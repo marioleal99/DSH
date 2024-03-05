@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: 100
+  particulas: {fileID: 3000547571972217434, guid: a95af142b8a080f45a25284b2bcd32a0, type: 3}
 --- !u!54 &-6724046116410597050
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -107,7 +107,7 @@ public class JugadorBola2 : MonoBehaviour
             Destroy(other.gameObject);
             if (puntos >= 20)
             {
-                SceneManager.LoadScene("Win");
+                SceneManager.LoadScene("Nivel3");
             }
         }
     }
